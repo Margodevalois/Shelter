@@ -73,6 +73,9 @@ p{
     color: #FFFFFF;
     padding-top: 10px;
 }
+.burger_menu{
+    display: none;
+}
 .nav_menu ul{
     width: 443px;
     height: 27px;
@@ -746,5 +749,250 @@ p{
     .location{
         width: 300px;
         padding: 0;
+    }
+}
+/*for 320px*/
+@media (min-width: 320px) and (max-width: 767px){
+    .wrapper {
+        width: 100%;
+        height: 100%;
+    }
+    .header{
+        padding-top: 30px;
+        padding-left: 10px;
+        padding-right: 53px;
+    }
+    .start_screen{
+        width: 100%;
+        height: 823px;
+    }
+    .nav_menu{
+        display: none;
+    }
+    .burger_menu{
+        width: 30px;
+        height: 22px;
+        display: block;
+    }
+    .start_screen_content{
+        width: 300px;
+        height: 673px;;
+        margin: 0 auto;
+        flex-direction: column;
+    }
+    .tagline{
+        width: 300px;
+        height: 296px;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .tagline h2{
+        width: calc(207vw*100/320);
+        height: auto;
+        text-align: center;
+        font-size: calc(25vw*100/320);
+    }
+    .tagline p{
+        width: 300px;
+        height: 96px;
+        margin: 0 auto;
+        padding-top: 0;
+        text-align: center;
+    }
+    .start_screen_button{
+        align-self: center;
+        margin: 0 auto;
+    }
+    .start_screen_puppy{
+        width: 260px;
+        height: 271.77px;
+        padding-left: 40px;
+    }
+    .start_screen_puppy img{
+        width: 260px;
+        height: 271.77px;
+    }
+    #about{
+        height: 974px;
+    }
+    .wrapper_about{
+        width: 300px;
+        height: 890px;
+        padding: 42px 0;
+        margin: 0 auto;
+        gap: 42px;
+    }
+    .about_content{
+        order: -1;
+        align-items: center;
+        margin: 0 auto;
+    }
+    .about_content h3{
+        font-size: 25px;
+        text-align: center;
+    }
+    .about_content p{
+        width: 270px;
+        text-align: justify;
+    }
+    .wrapper_about img{
+        width: 260px;
+        height: 353.6px;
+        padding: 0;
+        margin: 0 auto;
+    }
+    #pets{
+        height: 791px;
+    }
+    #pets h3{
+        font-size: 25px;
+        padding-top: 42px;
+        justify-content: center;
+    }
+    .slider{
+        width: 270px;
+        height: 507px;
+        margin: 42px auto;
+        position: relative;
+    }
+    .card{
+        margin-top: 0;
+    }
+    #Jennifer{
+        display: none;
+    }
+    #Woody{
+        display: none;
+    }
+    .pets_button_arrow{
+        position: absolute;
+        top: 455px;
+        left: 43px;
+    }
+    .arrow_right{
+        position: absolute;
+        top: 455px;
+        left: 175px;
+    }
+    #help{
+        height: 745px;
+    }
+    .help_content{
+        width: 290px;
+        height: 661px;
+        padding-top: 42px;
+        padding-bottom: 42px;
+        margin: 0 auto;
+    }
+    #help h3{
+        width: 220px;
+        font-size: 25px;
+    }
+    .help_list{
+        width: 290px;
+        height: 555px;
+        margin: 42px 0 0;
+        gap: 30px;
+        justify-content: flex-start;
+    }
+    .help_item{
+        width: 130px;
+        height: 83px;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    .help_item img {
+        width: 50px;
+        height: 50px;
+    }
+    .help_item h4{
+        font-size: 15px;
+        margin-top: 20px;
+    }
+    #donation{
+        height: 542.2px;
+    }
+    .donation_content{
+        flex-direction: column-reverse;
+        justify-content: flex-end;
+        width: 300px;
+        height: 457.2px;
+        padding: 42px 0;
+        gap: 42px;
+        align-items: center;
+        margin: 0 auto;
+    }
+    .donation_info{
+        width: 300px;
+        height: 281px;
+        padding-left: 0;
+    }
+    .donation_info h3 {
+        font-size: 25px;
+        text-align: center;
+        height: 64px;
+    }
+    .donation_info h5{
+        width: 273px;
+        height: 24px;
+        margin: 0 auto;
+        letter-spacing: 0;
+    }
+    .button_donate{
+        width: 281px;
+        margin-left: 10px;
+    }
+    .button_donate h4{
+        font-size: 15px;
+    }
+    .donation_dog{
+        width: 260px;
+        height: 135.2px;
+        padding: 0;
+    }
+    .donation_info p {
+        width: 280px;
+        height: 90px;
+        text-align: justify;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #footer{
+        height: 809px;
+    }
+    .footer_content{
+        width: 300px;
+        height: 779px;
+        padding: 30px 0 0;
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: center;
+        margin: 0 auto;
+    }
+   .footer_title{
+        width: 278px;
+        height: 64px;
+        font-size: 25px;
+        text-align: center;
+    }
+    .contacts{
+        width: 278px;
+        height: 208px;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    .location{
+        width: 300px;
+        height: 222px;
+        padding: 0;
+    }
+    .adress{
+        padding-top: 40px;}
+    .footer_img{
+        width: 260px;
+        height: 269px;
     }
 }
