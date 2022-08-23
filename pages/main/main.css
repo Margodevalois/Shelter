@@ -168,7 +168,7 @@ p{
     padding-left: 42px;
 }
 /*start section "About the shelter"*/
-.about{
+#about{
     height: 588px;
     width: 100%;
     background: #FFFFFF;
@@ -224,11 +224,11 @@ p{
     color: #4C4C4C;
 }
 /*start section "Our friends who are looking for a house"*/
-.pets{
+#pets{
     height: 877px;
     background: #F6F6F6;
 }
-.pets h3{
+#pets h3{
     font-family: "Georgia";
     font-style: normal;
     font-weight: 400;
@@ -360,7 +360,7 @@ p{
     background-color: rgba(253, 220, 196, 1);
 }
 /*start section "Help"*/
-.help{
+#help{
     height: 611px;
     background: #FFFFFF;
 }
@@ -372,7 +372,7 @@ p{
     flex-direction: column;
     align-items: center;
 }
-.help h3{
+#help h3{
     width: 308px;
     height: 90px;
     font-family: "Georgia";
@@ -425,7 +425,7 @@ p{
     letter-spacing: 0.06em;
 }
 /*start section "Donation"*/
-.donation{
+#donation{
     height: 462px;
     background: #F6F6F6;
     align-items: center;
@@ -517,7 +517,7 @@ p{
     overflow: hidden;
 }
 /*start section "Footer"*/
-.footer{
+#footer{
     height: 350px;
     background: url("../../assets/images/noise_transparent@2x.png"), radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%), #211F20;
 }
