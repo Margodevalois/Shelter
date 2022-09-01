@@ -45,6 +45,9 @@ p{
     display: flex;
     flex-direction: column;
 }
+.logo_burger{
+    display: none;
+}
 .logo_title{
     font-family: "Georgia";
     font-style: normal;
@@ -767,12 +770,70 @@ p{
         height: 823px;
     }
     .nav_menu{
-        display: none;
+        display: block;
+        width: 320px;
+        height: 100vh;
+        position: fixed;
+        right: 0;
+        top: 0;
+        background-color: #292929;
+        margin: 0;
+        z-index: 2;
+        transition: 0.5s;
     }
     .burger_menu{
         width: 30px;
         height: 22px;
         display: block;
+        z-index: 2;
+    }
+    .scroll-hide{
+        overflow-y: hidden;
+    }
+    .burger_menu img{
+        transform: rotate(720deg);
+        transition: 0.5s;
+    }
+    .burger_menu:hover{
+        cursor: pointer;
+    }
+    .nav_menu li{
+        margin-bottom: 40px;
+    }
+    .nav_menu ul{
+        width: 243px;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .nav_menu a{
+        font-size: 32px;
+    }
+    .nav_menu li + li {
+        margin-left: 0;
+    }
+    .overflow{
+        position: fixed;
+        cursor: pointer;
+        top: 0;
+        bottom: 0;
+        z-index: 1;
+        width: 100%;
+        background-color: rgba(41,41,41,.6);
+    }
+    .burger-animation img{
+        transform: rotate(270deg);
+        transition: 0.5s;
+    }
+    .logo_burger{
+        display: flex;
+        margin-top: 30px;
+        margin-left: 10px;
+        width: 385px;
+    }
+    .nav_toggle{
+        transform: translate(100%);
     }
     .start_screen_content{
         width: 300px;
