@@ -8,7 +8,7 @@
     <link href="../../pages/main/normalize.css" rel="stylesheet" type="text/css">
     <title>SHELTER</title>
 </head>
-<body>
+<body class="scroll-hide">
     <div class="start_screen"> 
         <div class="wrapper">
             <header class="header">
@@ -18,17 +18,23 @@
                     </a>
                     <div class="logo_subtitle">Shelter for pets in Boston</div>
                 </div>
-                <div class="burger_menu">
-                    <img src="../../assets/icons/Burger.png" alt="menu button">
-                </div>
-                <nav class="nav_menu">
-                    <ul>
-                        <li class="active"><a href="#">About the shelter</a></li>
-                        <li><a href="../pets/index.html">Our pets</a></li>
-                        <li><a href="#help">Help the shelter</a></li>
-                        <li><a href="#footer">Contacts</a></li>
+                <nav class="nav_menu nav_toggle">
+                    <div class="logo logo_burger">
+                        <a href="#">
+                            <h1 class="logo_title">Cozy House</h1>
+                        </a>
+                        <div class="logo_subtitle">Shelter for pets in Boston</div>
+                    </div>
+                    <ul class="nav_burger">
+                        <li class="active burger_link"><a href="#">About the shelter</a></li>
+                        <li class="burger_link"><a href="../pets/index.html">Our pets</a></li>
+                        <li class="burger_link"><a href="#help">Help the shelter</a></li>
+                        <li class="burger_link"><a href="#footer">Contacts</a></li>
                     </ul>
                 </nav>
+                <div class="burger_menu burger_animation">
+                    <img src="../../assets/icons/Burger.png" alt="menu button">
+                </div>
             </header>
             <div class="start_screen_content">
                 <div class="tagline">
@@ -183,5 +189,7 @@
             </div>
         </div>
     </footer>
+    <div class="overflow block-none"></div>
+    <script src="main.js"></script>
 </body>
 </html>
