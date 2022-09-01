@@ -365,6 +365,143 @@ p{
     cursor: pointer;
     background-color: rgba(253, 220, 196, 1);
 }
+/* modal window */
+.hidden{
+    display: none;
+}
+.w_wrapper{
+    position: fixed;
+    cursor: pointer;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    width: 100%;
+    background-color: rgba(41,41,41,.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.w_modal{
+    width: 900px;
+    height: 500px;
+    background-color: #FAFAFA;
+    cursor: auto;
+    border-radius: 10px;
+    position: relative;
+}
+.w_btn{
+    position: absolute;
+    top: -50px;
+    right: -42px;
+}
+.w_btn img{
+    border: 2px solid #F1CDB3;
+    box-sizing: border-box;
+    border-radius: 100px;
+    padding: 18px;
+    cursor: pointer;
+}
+.w_area:hover .w_btn img{
+    background-color: #FDDCC4;
+    border-color: #FDDCC4;
+}
+.w_modal:hover .w_btn img{
+    background-color: rgba(0, 0, 0, 0);
+    border-color: #F1CDB3;
+}
+.w_btn:hover img:hover{
+    background-color: #FDDCC4;
+    border-color: #FDDCC4;
+}
+.modal_block{
+    display: flex;
+    flex-direction: row;
+}
+.m_img img{
+    width: 500px;
+    height: 500px;
+}
+.m_info{
+    width: 351px;
+    height: 362px;
+    padding-top: 50px;
+    padding-left: 29px;
+}
+.m_name{
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: #000000;
+}
+.m_type{
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+    color: #000000;
+    margin-top: 9px;
+}
+.m_description{
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+    color: #000000;
+    margin-top: 40px;
+    max-width: 350px;
+}
+.m_list{
+    margin-top: 43px;
+    padding-left: 15px;
+    list-style: disc;
+}
+.m_list li {
+    color: #F1CDB3;
+    margin-bottom: 10px;
+}
+.list_age{
+    font-family: 'Georgia';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 110%;
+  letter-spacing: 0.06em;
+  color: #000000;
+}
+.list_inoculations{
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+    color: #000000;
+}
+.list_diseases{
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+    color: #000000;
+}
+.list_parasites{
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+    color: #000000;
+}
 /*start section "Help"*/
 #help{
     height: 611px;
