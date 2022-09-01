@@ -854,10 +854,10 @@ p{
         align-items: center;
     }
     .tagline h2{
-        width: calc(207vw*100/320);
+        width: auto;
         height: auto;
         text-align: center;
-        font-size: calc(25vw*100/320);
+        font-size: 25px;
     }
     .tagline p{
         width: 300px;
