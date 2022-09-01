@@ -768,42 +768,40 @@ p{
         width: 100%;
         height: 1165px;
     }
-    .header{
+  .header, .start_screen_content, .tagline p, .start_screen_button,
+    .wrapper_about, .slider, .help_content, .donation_content, .footer_content
+    {
         margin: 0 auto;
+    }
+    .header{
         padding: 30px 30px 60px 30px;
+    }
+    .start_screen_content, .tagline{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
     .start_screen_content{
         width: 569px;
         height: 1015px;
         padding: 0 100px 0 99px;
-        margin: 0 auto;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
     }
     .tagline{
         width: 460px;
         padding: 0 0 0 55px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
     }
     .tagline p{
-        margin: 0 auto;
         padding-top: 0;
     }
     .start_screen_button{
         align-self: center;
-        margin: 0 auto;
+    }
+    .start_screen_puppy, .start_screen_puppy img{
+        width: 569px;
+        height: 593px;
     }
     .start_screen_puppy{
-        width: 569px;
-        height: 593px;
         padding-left: 70px;
-    }
-    .start_screen_puppy img{
-        width: 569px;
-        height: 593px;
     }
     #about{
         height: 1048px;
@@ -812,7 +810,6 @@ p{
         width: 437px;
         height: 868px;
         padding: 80px 166px 100px 165px;
-        margin: 0 auto;
         gap: 80px;
     }
     .about_content{
@@ -828,21 +825,39 @@ p{
         width: 708px;
         height: 435px;
         padding: 60px 30px;
-        flex-direction: column;
         gap: 12px;
-        margin: 0 auto;
     }
-    .slider_content{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 53px;
+    #cards{
+        width: 580px;
+        gap: 40px;
     }
     .card{
         margin-top: 0;
     }
-    #Woody{
-        display: none;
+    .w_modal{
+        width: 682px;
+        height: 350px;
+    }
+    .m_img img{
+        width: 350px;
+        height: 350px;
+    }
+    .m_info{
+        width: 100%;
+        height: 303px;
+        padding-top: 10px;
+        padding-left: 11px;
+        padding-right: 9px;
+    }
+    .m_description{
+        font-size: 13px;
+        margin-top: 20px;
+    }
+    .m_list{
+        margin-top: 20px;
+    }
+    .m_list li {
+        margin-bottom: 5px;
     }
     #help{
         height: 779px;
@@ -1058,20 +1073,18 @@ p{
         padding-top: 42px;
         justify-content: center;
     }
-    .slider{
+   .slider{
         width: 270px;
-        height: 507px;
-        margin: 42px auto;
+        margin: 42px auto 0 auto;
         position: relative;
+        padding-bottom: 112px;
+    }
+    #cards{
+        width: 270px;
+        gap: 20px;
     }
     .card{
         margin-top: 0;
-    }
-    #Jennifer{
-        display: none;
-    }
-    #Woody{
-        display: none;
     }
     .pets_button_arrow{
         position: absolute;
@@ -1082,6 +1095,35 @@ p{
         position: absolute;
         top: 455px;
         left: 175px;
+    }
+    .w_modal{
+        width: 240px;
+        height: auto;
+    }
+    .m_img{
+        display: none;
+    }
+    .m_info{
+        width: 220px;
+        height: auto;
+        padding: 10px;
+    }
+    .m_name{
+        text-align: center;
+    }
+    .m_type{
+        text-align: center;
+    }
+    .m_description{
+        font-size: 13px;
+        margin-top: 20px;
+        text-align: justify;
+    }
+    .m_list{
+        margin-top: 24px;
+    }
+    .m_list li{
+        margin-bottom: 5px;
     }
     #help{
         height: 745px;
