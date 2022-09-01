@@ -250,12 +250,13 @@ p{
     margin: 0 auto;
 }
 .slider{
-    display: flex;
+   display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     gap: 53px;
+    margin-bottom: 60px;
+    margin-top: 60px;
 }
 .pets_button_arrow{
     width: 52px;
@@ -277,9 +278,15 @@ p{
     cursor: pointer;
 }
 .slider_content{
+    overflow: hidden;
+}
+#cards{
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    position: relative;
+    left: -990px;
+}
+#left_cards, #active_cards, #right_cards {
+    display: flex;
     gap: 90px;
 }
 .card{
