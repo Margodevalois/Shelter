@@ -279,13 +279,6 @@ p{
 }
 .slider_content{
     overflow: hidden;
-}
-#cards{
-    display: flex;
-    position: relative;
-    left: -990px;
-}
-#left_cards, #active_cards, #right_cards {
     display: flex;
     gap: 90px;
 }
@@ -369,6 +362,38 @@ p{
 .pets_primary_button:hover{
     cursor: pointer;
     background-color: rgba(253, 220, 196, 1);
+}
+/*slider moves*/
+.to-left{
+    animation: 1s ease-in-out left;
+}
+.to-right{
+    animation: 1s ease-in-out right;
+}
+.from-left{
+    animation: 1s ease-in-out left;
+    animation-direction: reverse;
+}
+.from-right{
+    animation: 1s ease-in-out right;
+    animation-direction: reverse;
+}
+
+@keyframes left{
+    from {
+      left: 0;
+    }
+    to {
+      left: -100%;
+    }
+}
+@keyframes right{
+    from {
+      left: 0;
+    }
+    to {
+      left: 100%;
+    }
 }
 /* modal window */
 .hidden{
