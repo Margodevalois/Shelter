@@ -97,6 +97,98 @@ const pets = [
     }
   ];
 
+//slider
+  let petsCard = document.querySelectorAll('.card');
+  let petsCardsWrapper = document.querySelectorAll('.slider_content');
+  
+  let currentItem = 0;
+  let currentPetsItem = 0;
+  let isEnabledBtn = true;
+  let overlayBg = document.querySelector('.overlay');
+
+  function changeCurrentItem(n){
+    currentItem = (n + petsCardsWrapper.length) % petsCardsWrapper.length;
+}
+function changePetsItem(n){
+    currentPetsItem =  (n + pets.length) % pets.length;
+}
+
+const createCard = (amount, reverse = false) => {
+    reverse ? changePetsItem(currentPetsItem - amount*2) : void(0);
+    let items = [];
+    let item;
+    for(let i = 0; i < amount; i++){
+
+        item = `<div class="card">
+                    <img src=${pets[currentPetsItem].img} alt="${pets[currentPetsItem].name}" id="${pets[currentPetsItem].id}">
+                    <h4>${pets[currentPetsItem].name}</h4> 
+                    <button type="button">Learn more</button>
+                    </div>`;
+        items.push(item);
+        changePetsItem(currentPetsItem + 1);
+        }
+    return items.join('');
+}
+const createCardsNext = (reverse = false) => {
+    let items;
+    if(document.documentElement.clientWidth >= 1280){
+        items = reverse ? createCard(3, true) : createCard(3);
+    }else if(document.documentElement.clientWidth > 767){
+        items = reverse ? createCard(2, true) : createCard(2);
+    }else {
+        items = reverse ? createCard(1, true) : createCard(1);
+    }
+     petsCardsWrapper[currentItem].innerHTML = items;
+    // popupListener();
+}
+function hideItem(direction){
+    isEnabledBtn = false;
+    petsCardsWrapper[currentItem].classList.add(direction);
+    petsCardsWrapper[currentItem].addEventListener('animationend', function() {
+        this.classList.remove(direction);
+        this.classList.add('disabled');
+    });
+}
+function showItem(direction){
+    petsCardsWrapper[currentItem].classList.add(direction);
+    petsCardsWrapper[currentItem].addEventListener('animationend', function() {
+        this.classList.remove('disabled', direction);
+        isEnabledBtn = true;
+    });
+}
+function nextItem(n){
+    hideItem('to-left');
+    changeCurrentItem(n + 1);
+    showItem('from-right');
+}
+function previousItem(n){
+    hideItem('to-right');
+    changeCurrentItem(n - 1);
+    showItem('from-left');
+}
+
+createCardsNext();
+
+window.addEventListener('resize', event => {
+    createCardsNext();
+});
+document.querySelectorAll('#btn_left').forEach(el => {
+    el.addEventListener('click', () => {
+        if(isEnabledBtn){ 
+            previousItem(currentItem);
+            createCardsNext(true);
+        }
+});
+});
+document.querySelectorAll('#btn_right').forEach(el => {
+    el.addEventListener('click', () => {
+        if(isEnabledBtn){  
+            nextItem(currentItem);
+            createCardsNext();
+        }
+});
+});
+
 //pop-up
 let slider = document.querySelector('.slider');
 let popUp = document.querySelector('.window');
