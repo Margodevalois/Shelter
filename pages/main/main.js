@@ -104,7 +104,6 @@ const pets = [
   let currentItem = 0;
   let currentPetsItem = 0;
   let isEnabledBtn = true;
-  let overlayBg = document.querySelector('.overlay');
 
   function changeCurrentItem(n){
     currentItem = (n + petsCardsWrapper.length) % petsCardsWrapper.length;
