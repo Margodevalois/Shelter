@@ -827,6 +827,9 @@ p{
         padding: 60px 30px;
         gap: 12px;
     }
+    .slider_content{
+        gap: 40px;
+    }
     #cards{
         width: 580px;
         gap: 40px;
