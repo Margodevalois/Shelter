@@ -96,95 +96,91 @@ const pets = [
       "parasites": ["lice", "fleas"]
     }
   ];
-
 //slider
-  let petsCard = document.querySelectorAll('.card');
-  let petsCardsWrapper = document.querySelectorAll('.slider_content');
-  
-  let currentItem = 0;
-  let currentPetsItem = 0;
-  let isEnabledBtn = true;
+let petsCard = document.querySelectorAll('.card');
+let petsCardsWrapper = document.querySelectorAll('.slider_content');
 
-  function changeCurrentItem(n){
-    currentItem = (n + petsCardsWrapper.length) % petsCardsWrapper.length;
+let currentItem = 0;
+let currentPetsItem = 0;
+let isEnabledBtn = true;
+
+function changeCurrentItem(n){
+  currentItem = (n + petsCardsWrapper.length) % petsCardsWrapper.length;
 }
 function changePetsItem(n){
-    currentPetsItem =  (n + pets.length) % pets.length;
+  currentPetsItem =  (n + pets.length) % pets.length;
 }
 
 const createCard = (amount, reverse = false) => {
-    reverse ? changePetsItem(currentPetsItem - amount*2) : void(0);
-    let items = [];
-    let item;
-    for(let i = 0; i < amount; i++){
+  reverse ? changePetsItem(currentPetsItem - amount*2) : void(0);
+  let items = [];
+  let item;
+  for(let i = 0; i < amount; i++){
 
-        item = `<div class="card">
-                    <img src=${pets[currentPetsItem].img} alt="${pets[currentPetsItem].name}" id="${pets[currentPetsItem].id}">
-                    <h4>${pets[currentPetsItem].name}</h4> 
-                    <button type="button">Learn more</button>
-                    </div>`;
-        items.push(item);
-        changePetsItem(currentPetsItem + 1);
-        }
-    return items.join('');
-}
+      item = `<div class="card" id="${pets[currentPetsItem].id}">
+                <img src=${pets[currentPetsItem].img} alt="${pets[currentPetsItem].name}">
+                <h4>${pets[currentPetsItem].name}</h4>
+                <button type="button">Learn more</button>
+                </div>`;
+      items.push(item);
+      changePetsItem(currentPetsItem + 1);
+      }
+  return items.join('');
+};
 const createCardsNext = (reverse = false) => {
-    let items;
-    if(document.documentElement.clientWidth >= 1280){
-        items = reverse ? createCard(3, true) : createCard(3);
-    }else if(document.documentElement.clientWidth > 767){
-        items = reverse ? createCard(2, true) : createCard(2);
-    }else {
-        items = reverse ? createCard(1, true) : createCard(1);
-    }
-     petsCardsWrapper[currentItem].innerHTML = items;
-    // popupListener();
-}
+  let items;
+  if(document.documentElement.clientWidth >= 1280){
+      items = reverse ? createCard(3, true) : createCard(3);
+  }else if(document.documentElement.clientWidth > 767){
+      items = reverse ? createCard(2, true) : createCard(2);
+  }else {
+      items = reverse ? createCard(1, true) : createCard(1);
+  }
+   petsCardsWrapper[currentItem].innerHTML = items;
+  // popupListener();
+};
 function hideItem(direction){
-    isEnabledBtn = false;
-    petsCardsWrapper[currentItem].classList.add(direction);
-    petsCardsWrapper[currentItem].addEventListener('animationend', function() {
-        this.classList.remove(direction);
-        this.classList.add('disabled');
-    });
+  isEnabledBtn = false;
+  petsCardsWrapper[currentItem].classList.add(direction);
+  petsCardsWrapper[currentItem].addEventListener('animationend', function() {
+      this.classList.remove(direction);
+      this.classList.add('disabled');
+  });
 }
 function showItem(direction){
-    petsCardsWrapper[currentItem].classList.add(direction);
-    petsCardsWrapper[currentItem].addEventListener('animationend', function() {
-        this.classList.remove('disabled', direction);
-        isEnabledBtn = true;
-    });
+  petsCardsWrapper[currentItem].classList.add(direction);
+  petsCardsWrapper[currentItem].addEventListener('animationend', function() {
+      this.classList.remove('disabled', direction);
+      isEnabledBtn = true;
+  });
 }
 function nextItem(n){
-    hideItem('to-left');
-    changeCurrentItem(n + 1);
-    showItem('from-right');
+  hideItem('to-left');
+  changeCurrentItem(n + 1);
+  showItem('from-right');
 }
 function previousItem(n){
-    hideItem('to-right');
-    changeCurrentItem(n - 1);
-    showItem('from-left');
+  hideItem('to-right');
+  changeCurrentItem(n - 1);
+  showItem('from-left');
 }
 
 createCardsNext();
 
-window.addEventListener('resize', event => {
-    createCardsNext();
-});
 document.querySelectorAll('#btn_left').forEach(el => {
-    el.addEventListener('click', () => {
-        if(isEnabledBtn){ 
-            previousItem(currentItem);
-            createCardsNext(true);
-        }
+  el.addEventListener('click', () => {
+      if(isEnabledBtn){ 
+          previousItem(currentItem);
+          createCardsNext(true);
+      }
 });
 });
 document.querySelectorAll('#btn_right').forEach(el => {
-    el.addEventListener('click', () => {
-        if(isEnabledBtn){  
-            nextItem(currentItem);
-            createCardsNext();
-        }
+  el.addEventListener('click', () => {
+      if(isEnabledBtn){  
+          nextItem(currentItem);
+          createCardsNext();
+      }
 });
 });
 
@@ -192,29 +188,28 @@ document.querySelectorAll('#btn_right').forEach(el => {
 let slider = document.querySelector('.slider');
 let popUp = document.querySelector('.window');
 
-function popup (event){
-let myElement = event.target.closest('.card');
-let myModal = event.target;
+function popup (e){
+let myElement = e.target.closest('.card');
+let myModal = e.target;
 if(myElement){
-    popUp.classList.toggle('hidden')
-  let i = +event.target.closest('.card').getAttribute('id');
-  document.querySelector('.img').src = pets[i]["img"];
-  document.querySelector('.m_name').innerHTML = pets[i]["name"];
-  document.querySelector('.type').innerHTML = pets[i]["type"];
-  document.querySelector('.breed').innerHTML = pets[i]["breed"];
-  document.querySelector('.m_description').innerHTML = pets[i]["description"];
-  document.querySelector('.age').innerHTML = pets[i]["age"];
-  document.querySelector('.inoculations').innerHTML = pets[i]["inoculations"];
-  document.querySelector('.diseases').innerHTML = pets[i]["diseases"];
-  document.querySelector('.parasites').innerHTML = pets[i]["parasites"];
+  popUp.classList.toggle('hidden');
+  let i = +myElement.getAttribute("id");
+  document.querySelector('.img').src = pets[i].img;
+  document.querySelector('.m_name').innerHTML = pets[i].name;
+  document.querySelector('.type').innerHTML = pets[i].type;
+  document.querySelector('.breed').innerHTML = pets[i].breed;
+  document.querySelector('.m_description').innerHTML = pets[i].description;
+  document.querySelector('.age').innerHTML = pets[i].age;
+  document.querySelector('.inoculations').innerHTML = pets[i].inoculations;
+  document.querySelector('.diseases').innerHTML = pets[i].diseases;
+  document.querySelector('.parasites').innerHTML = pets[i].parasites;
 }
 if(myModal.getAttribute('class') === 'w_wrapper' || myModal.closest('.w_btn')){
-    popUp.classList.toggle('hidden')
+  popUp.classList.toggle('hidden');
 }
 }
-
-slider.addEventListener('click', popup)
-popUp.addEventListener('click', popup)
+slider.addEventListener('click', popup);
+popUp.addEventListener('click', popup);
 
 //burger
 let btnBurger = document.querySelector('.burger_menu');
@@ -225,23 +220,23 @@ let logoBurger = document.querySelector('.logo_burger');
 let bodyScroll = document.body;
 
 function handler (){
-    overflow.classList.toggle('block-none')
-    navMenu.classList.toggle('nav_toggle')
-    btnBurger.classList.toggle('burger-animation')
-    bodyScroll.classList.toggle('scroll-hide')
+    overflow.classList.toggle('block-none');
+    navMenu.classList.toggle('nav_toggle');
+    btnBurger.classList.toggle('burger-animation');
+    bodyScroll.classList.toggle('scroll-hide');
 }
 
 function handlerMenu (event){
   let myElement = event.target.getAttribute('class');
   if(myElement === 'burger_link'){
-    overflow.classList.toggle('block-none')
-    navMenu.classList.toggle('nav_toggle')
-    btnBurger.classList.toggle('burger-animation')
-    bodyScroll.classList.toggle('scroll-hide')  
+    overflow.classList.toggle('block-none');
+    navMenu.classList.toggle('nav_toggle');
+    btnBurger.classList.toggle('burger-animation');
+    bodyScroll.classList.toggle('scroll-hide');
   }
 }
 
-btnBurger.addEventListener('click', handler)
-overflow.addEventListener('click', handler)
-logoBurger.addEventListener('click', handler)
-navBurger.addEventListener('click', handlerMenu)
+btnBurger.addEventListener('click', handler);
+overflow.addEventListener('click', handler);
+logoBurger.addEventListener('click', handler);
+navBurger.addEventListener('click', handlerMenu);
